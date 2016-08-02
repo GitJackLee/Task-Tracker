@@ -2,6 +2,16 @@ body {
   background: #eeeeee;
 }
 
+.taskItems {
+  text-align: left;
+  list-style: none;
+  margin: 10px;
+}
+
+.taskItems .deleteTask{
+  background: #FF4343;
+}
+
 #container {
   margin: 10% 35%;
   text-align: center;

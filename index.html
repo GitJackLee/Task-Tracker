@@ -10,32 +10,37 @@
   <body>
 
     <div id="container">
-      <h1 id="timer">00h 00m 00s 000ms</h1>
+
+      <h1 id="taskTitle">Task Tracker</h1>
+
       <div id="buttons">
+        <h1 id="timer">00h 00m 00s 000ms</h1>
         <button id="start">Start</button>
         <button id="stop">Stop</button>
         <button id="reset">Reset</button>
+        <button id="save">Save</button>
       </div>
+
+      <hr>
+
+      <div id="taskInput">
+        <input id="currentTask" type="text" placeholder="Enter task here">
+      </div>
+
+      <div>
+        <ul id="taskList">
+          <li class="taskItems"><span class="deleteTask">X</span> Codewars <span class="stopWatchTime">-- 00h 00m 00s 000ms</span></li>
+          <li class="taskItems"><span class="deleteTask">X</span> FreeCodeCamp <span class="stopWatchTime">-- 00h 00m 00s 000ms</span></li>
+          <li class="taskItems"><span class="deleteTask">X</span> Pluralsight <span class="stopWatchTime">-- 00h 00m 00s 000ms</span></li>
+          <li class="taskItems"><span class="deleteTask">X</span> Udacity <span class="stopWatchTime">-- 00h 00m 00s 000ms</span></li>
+        </ul>
+      </div>
+
     </div>
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
-    <script type="text/javascript" src="js/testing2.js"></script>
+    <script type="text/javascript" src="js/task_list.js"></script>
+    <script type="text/javascript" src="js/stopwatch.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
   </body>
 </html>
-
-<!--
-//Inversed navbar (black) that has the title of the site, login and register.
-//If the user is logged in, their name shows in place of login, and logout shows in place of register.
-
-//Create an unordered list, or ul. Using CSS, remove the lines.
-//The ul should have a class of "tasks".
-//Each item in the ul should have a span, with the class of "taskTimer".
-//On the left of each ul task, there should be a span with "x" as the content. This will be used to delete the task.
-//On the right of each task, there should be a button that allows you to continue the corresponding task.
-
-//There should be a text input area above the stopwatch.
-//The text input area should have a button to submit both the task name and time.
-  //For example, text input: "Programming", time: "01h 30m 30s".
-  //Pressing the submit button should append the task to a new ul.
--->
