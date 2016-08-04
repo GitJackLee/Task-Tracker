@@ -5,7 +5,7 @@ var offset;
 
 //This is run first
 function startClock(){
-  if(!isOn){
+  if(!isOn && title){
     interval = setInterval(update, 10);
     offset = Date.now();
     isOn = true;
@@ -65,6 +65,8 @@ function stopClock(){
 
 //This is run only when reset button is pressed
 function resetClock(){
-  time = 0;
-  update();
+  if(!isOn){
+    time = 0;
+    update();
+  }
 }
