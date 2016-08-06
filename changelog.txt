@@ -1,0 +1,24 @@
+July 4th, 2016
+- General changes
+  - Clicking on the title now makes a text box appear.
+  - Entering a new title replaces the old title with a new one.
+  - User must enter at least one character.
+  - The text of the task title is the placeholder of the text box.
+  - Added a cancel button. Removed from the DOM when text is submitted from the text box.
+    - When the cancel button is pressed, the original text (placeholder) is returned.
+
+- Stopwatch changes
+  - If the clock is running, you can't change the task name.
+  - If you are in "enter task name" mode (where you can type in the task name), you're unable to start the clock or save your data.
+  - Must stop the stopwatch in order to reset.
+
+July 5th, 2016
+- General changes
+  - Added a continue button for each li.
+    - Changed ".taskItems" to "ul" to dynamically affect newly created continue buttons. **Note to self, although I did this on my own, I don't understand completely why it happened that way. Check it out**
+  - Save button does not work if the timer is running
+
+July 6th, 2016
+- General changes
+  - Changed variable "time" to "currentTime".
+  - Changed timer to start from continued time.

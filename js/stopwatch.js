@@ -1,4 +1,4 @@
-var time = 0; //used to udpate the stopwatch from where it left off. increments as milliseconds and passed into formatTime
+var currentTime = 0; //used to udpate the stopwatch from where it left off. increments as milliseconds and passed into formatTime
 var isOn = false;
 var interval;
 var offset;
@@ -23,9 +23,9 @@ function delta(){
 //This is run third
 function update(){
   if(isOn){
-    time += delta();
+    currentTime += delta();
   }
-  timer.innerHTML = formatTime(time);
+  $("#timer").text(formatTime(currentTime));
 }
 
 //This is run forth
@@ -66,7 +66,7 @@ function stopClock(){
 //This is run only when reset button is pressed
 function resetClock(){
   if(!isOn){
-    time = 0;
+    currentTime = 0;
     update();
   }
 }

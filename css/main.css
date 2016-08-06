@@ -20,3 +20,7 @@ body {
 #buttons {
   text-align: center;
 }
+
+#taskList .continueTask {
+  float: right;
+}

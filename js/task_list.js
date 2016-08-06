@@ -1,7 +1,7 @@
 var title = true;
 
 $("#save").on("click", saveTime);
-$("ul").on("click", "span", removeTask);
+$("ul").on("click", ".deleteTask", removeTask);
 
 //Change task name
 $("#taskNameAndInput").on("click", "#taskName", function(){
@@ -41,24 +41,31 @@ function removeTask(event){
 
 function saveTime(){
   var taskValue = $("#taskName").text();
-  var timerValue = $("#timer").text();
-  if(title){
-    $("#taskList").append("<li class='taskItems'><span class='deleteTask'>X</span> " + taskValue + "<span class='stopWatchTime'> -- " + timerValue + "</span></li>");
+  var timerValue = formatTime(currentTime);
+  if(title && !isOn){
+    $("#taskList").append("<li class='taskItems'><span class='deleteTask'>X</span> " + taskValue + " <span class='stopWatchTime'>" + timerValue + "</span><button class='continueTask'>Continue</button></li>");
   }
 }
 
-/*
-- Fixes
-  - When the timer is running, the user cannot update the task name.
+function continueTask() {
+  $.fn.ignore = function(sel){
+    return this.clone().find(sel||">*").remove().end();
+  }
+  var task = $(this).parent().ignore("button, span").text();
+  var stopWatchTime = $(this).prev().text();
 
-- Changes
-  - Change the h1 to a text box area.
-    - When enter is pressed, the text box disappears and in its place, the h1 with the title appears.
-    - When the user clicks on any part of the h1 element, the text box will appear so the user can change the title if needed.
-    - The text box will have the previous content within the text area.
+  var convertTime = function taskTime(msToConvert){
+    var time = stopWatchTime;
+    var noLetters = /[a-z]/g;
+    time = time.replace(noLetters, "").split(" ");
+    var seconds = (time[0]) * 60 * 60 + (+time[1]) * 60 + (+time[2]) + (+time[3]) / 1000;
+    var milliseconds = seconds * 1000;
+    currentTime = milliseconds;
+    return formatTime(milliseconds);
+  };
 
-- Features to add
-  - Make a button on the right of each task under the ul. This button will be used to continue the corresponding task.
-    - When the continue button is clicked, the h1 will appear with the appropriate title, and the timer will be set to the saved time.
-    - When the save button is clicked, the task will overwrite the previous content.
-*/
+  $("#taskName").replaceWith("<h1 id='taskName'>" + task + "</h1>");
+  $("#timer").replaceWith("<h1 id='timer'>" +  convertTime(stopWatchTime) + "</h1>");
+}
+
+$("ul").on("click", "button", continueTask);
