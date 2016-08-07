@@ -22,3 +22,17 @@ July 6th, 2016
 - General changes
   - Changed variable "time" to "currentTime".
   - Changed timer to start from continued time.
+
+July 7th, 2016
+- Decided to use npm from Node.js to finish this project.
+  - Installed:
+    - Express
+    - Body Parser
+    - Mongoose
+    - EJS
+
+- File changes
+  - Put javascript and css files in the public directory.
+  - index.html is now index.ejs.
+  - Created app.js file.
+  - Made necessary changes in index.ejs due to directory changes.

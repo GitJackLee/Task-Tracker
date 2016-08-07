@@ -1,0 +1,25 @@
+{
+  "name": "task_tracker",
+  "version": "1.0.0",
+  "description": "Track users tasks",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GitJackLee/Task-Tracker.git"
+  },
+  "author": "Jack Anderson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GitJackLee/Task-Tracker/issues"
+  },
+  "homepage": "https://github.com/GitJackLee/Task-Tracker#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "ejs": "^2.5.1",
+    "express": "^4.14.0",
+    "mongoose": "^4.5.8"
+  }
+}
