@@ -6,7 +6,7 @@ $("ul").on("click", ".deleteTask", removeTask);
 //Change task name
 $("#taskNameAndInput").on("click", "#taskName", function(){
   var placeholder = $("#taskName").text();
-  var taskInput = '<input id="taskInput" type="text" placeholder="' + placeholder + '"><button id="cancel">Cancel</button>';
+  var taskInput = '<form action="/" method="POST"><input id="taskInput" type="text" name="task" placeholder="' + placeholder + '"><button id="cancel">Cancel</button></form>';
   if(title && !isOn){
     $("#taskName").replaceWith(taskInput);
     title = false;
@@ -18,6 +18,7 @@ $("#taskNameAndInput").on("keypress", "#taskInput", function(event){
   var value = $(this).val();
   if(!title && event.which === 13 && value.length !== 0 && !isOn) {
     var taskName = "<h1 id='taskName'>" + value + "</h1>";
+    this.form.submit();
     $("#taskInput").replaceWith(taskName);
     $("#cancel").remove();
     title = true;
