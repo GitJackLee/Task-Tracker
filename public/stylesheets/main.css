@@ -12,6 +12,10 @@ body {
   background: #FF4343;
 }
 
+div.ui.container {
+  font-size: 20px;
+}
+
 .ui.main.text.container.segment {
   margin-top: 10em;
 }

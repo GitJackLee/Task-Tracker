@@ -5,6 +5,7 @@ var methodOverride = require("method-override");
 var expressSanitizer = require("express-sanitizer");
 var mongoose = require("mongoose");
 var Task = require("./models/tasks.js");
+var flash = require("connect-flash");
 var seedDB = require("./seeds.js");
 
 //APP CONFIGURATION
@@ -15,6 +16,7 @@ app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(expressSanitizer());
 app.use(methodOverride("_method"));
+app.use(flash());
 seedDB();
 
 app.get("/", function(req, res){
@@ -83,7 +85,6 @@ app.put("/tasks/:id", function(req, res){
     } else {
       console.log(updatedTask);
       res.redirect("/tasks/" + req.params.id);
-      // res.redirect("/tasks/" + req.params.id);
     }
   });
 });
