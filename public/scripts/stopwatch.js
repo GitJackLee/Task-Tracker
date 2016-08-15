@@ -1,11 +1,24 @@
-var currentTime = 0; //used to udpate the stopwatch from where it left off. increments as milliseconds and passed into formatTime
+var mainTimer = $("#timer").text();
+var currentTime = convertCurrentTaskTime(mainTimer); //used to udpate the stopwatch from where it left off. increments as milliseconds and passed into formatTime
 var isOn = false;
 var interval;
 var offset;
 
+//Continue task
+
+function convertCurrentTaskTime(msToConvert){
+  var time = msToConvert;
+  var noLetters = /[a-z]/g;
+  time = time.replace(noLetters, "").split(" ");
+  var seconds = (time[0]) * 60 * 60 + (+time[1]) * 60 + (+time[2]) + (+time[3]) / 1000;
+  var milliseconds = seconds * 1000;
+  return milliseconds;
+}
+
+
 //This is run first
 function startClock(){
-  if(!isOn && title){
+  if(!isOn){
     interval = setInterval(update, 10);
     offset = Date.now();
     isOn = true;
@@ -25,7 +38,9 @@ function update(){
   if(isOn){
     currentTime += delta();
   }
-  $("#timer").text(formatTime(currentTime));
+  // $("#timer").text(formatTime(currentTime));
+  $("#submitTime").val(formatTime(currentTime));
+  $("#timer").text($("#submitTime").val());
 }
 
 //This is run forth

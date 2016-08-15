@@ -1,0 +1,20 @@
+<% include ./partials/header %>
+
+<div id="container">
+
+  <div id="taskNameAndInput">
+    <h1>Enter New Task Name</h1>
+    <form class="ui form" id="taskForm" action="/tasks" method="POST">
+      <div class="field">
+        <input id="submitTask" name="task[task]" type="text" placeholder="Enter New Task">
+      </div>
+      <div class="field">
+        <h1 id="timer">00h 00m 00s 000ms</h1>
+      </div>
+      <button class="ui violet basic button">Submit New Task</button>
+    </form>
+  </div>
+
+</div>
+
+<% include ./partials/footer %>

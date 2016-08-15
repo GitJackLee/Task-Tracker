@@ -1,47 +1,35 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <link rel="stylesheet" type="text/css" href="stylesheets/main.css">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Task Manager</title>
+<% include ./partials/header %>
 
-  </head>
-  <body>
+<div id="container">
 
-    <div id="container">
-
-      <div id="taskNameAndInput">
-        <h1 id="taskName">Enter task name</h1>
+  <div class="ui main text container">
+    <div class="ui huge header">Task Tracker</div>
+    <div class="ui top attached segment">
+      <div class="ui divided items">
+        <% tasks.forEach(function(task){ %>
+            <div class="item">
+              <div class="content">
+                <div class="created">
+                  <h2><%=task.task%></h2>
+                </div>
+                <div class="time">
+                  <h3><%=task.timer%></h3>
+                </div>
+                <div class="extra">
+                <a class="ui floated basic violet button" href="/tasks/<%=task._id%>">Start Task</a>
+                <form id="deleteForever" action="/tasks/<%=task._id%>?_method=DELETE" method="POST">
+                  <button class="ui red basic button">DELETE</button>
+                </form>
+                </div>
+                <div class="meta">
+                  <p>Created on: <%=task.created.toDateString()%>, <%= task.created.toTimeString().slice(0, -18) %></p>
+                </div>
+              </div>
+            </div>
+          <% }); %>
       </div>
-
-      <div id="buttons">
-        <h1 id="timer">00h 00m 00s 000ms</h1>
-        <button id="start">Start</button>
-        <button id="stop">Stop</button>
-        <button id="reset">Reset</button>
-        <button id="save">Save</button>
-      </div>
-
-      <br>
-
-      <hr>
-
-      <div>
-        <!--All placeholders for now-->
-        <ul id="taskList">
-          <li class="taskItems"><span class="deleteTask">X</span> Codewars <span class="stopWatchTime">00h 00m 00s 000ms</span><button class="continueTask">Continue</button></li>
-          <li class="taskItems"><span class="deleteTask">X</span> FreeCodeCamp <span class="stopWatchTime">00h 00m 00s 000ms</span><button class="continueTask">Continue</button></li>
-          <li class="taskItems"><span class="deleteTask">X</span> Pluralsight <span class="stopWatchTime">00h 00m 00s 000ms</span><button class="continueTask">Continue</button></li>
-          <li class="taskItems"><span class="deleteTask">X</span> Udacity <span class="stopWatchTime">00h 00m 00s 000ms</span><button class="continueTask">Continue</button></li>
-        </ul>
-      </div>
-
     </div>
+  </div>
+</div>
 
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
-    <script type="text/javascript" src="scripts/task_list.js"></script>
-    <script type="text/javascript" src="scripts/stopwatch.js"></script>
-    <script type="text/javascript" src="scripts/main.js"></script>
-  </body>
-</html>
+<% include ./partials/footer %>

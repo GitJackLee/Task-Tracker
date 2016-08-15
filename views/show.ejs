@@ -1,0 +1,36 @@
+<% include ./partials/header %>
+
+<div class="ui main text container segment">
+  <div class="ui huge header">
+    <div class="ui top attached">
+      <div class="item">
+        <div class="time">
+          <form id="invisibleForm" action="/tasks/<%=task._id%>?_method=PUT" method="POST">
+            <div class="field">
+              <label id="taskName"><%= task.task %></label>
+              <input id="submitTask" type="hidden" name="task[task]" value="<%=task.task%>">
+            </div>
+            <div class="field">
+              <h1><label id="timer"><%=task.timer%></label></h1>
+              <input id="submitTime" type="hidden" name="task[timer]" value="<%= task.timer %>">
+            </div>
+            <div class="field">
+              <input class="ui green basic button" type="submit" value="SAVE">
+            </div>
+          </form>
+        </div>
+        <a class="ui blue basic button" href="/tasks/<%= task._id %>/edit">EDIT</a>
+        <form id="deleteForever" action="/tasks/<%=task._id%>?_method=DELETE" method="POST">
+          <button class="ui red basic button">DELETE</button>
+        </form>
+        <div id="timerButtons">
+          <button class="ui labled icon button" id="start"><i class="play icon"></i>Start</button>
+          <button class="ui labled icon button" id="stop"><i class="pause icon"></i>Pause</button>
+          <button class="ui labled icon button" id="reset"><i class="refresh icon"></i>Reset to zero</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% include ./partials/footer %>

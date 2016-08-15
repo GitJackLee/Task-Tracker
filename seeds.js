@@ -4,23 +4,23 @@ var Task = require("./models/tasks");
 var data = [
   {
     task: "Codewars",
-    timer: 1470580179289
+    timer: "00h 00m 00s 000ms"
   },
   {
     task: "FreeCodeCamp",
-    timer: 1470883875716
+    timer: "01h 10m 30s 000ms"
   },
   {
     task: "Pluralsight",
-    timer: 1470883929364
+    timer: "10h 50m 20s 500ms"
   },
   {
     task: "Udacity",
-    timer: 1470883952307
+    timer: "23h 20m 33s 723ms"
   },
   {
     task: "Udemy",
-    timer: 1470883977132
+    timer: "04h 18m 44s 123ms"
   }
 ]
 

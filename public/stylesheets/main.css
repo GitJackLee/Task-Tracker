@@ -12,6 +12,15 @@ body {
   background: #FF4343;
 }
 
+.ui.main.text.container.segment {
+  margin-top: 10em;
+}
+
+
+div.item {
+  text-align: center;
+}
+
 #container {
   margin: 10% 35%;
   text-align: center;
@@ -21,6 +30,10 @@ body {
   text-align: center;
 }
 
-#taskList .continueTask {
-  float: right;
+#deleteForever {
+  display: inline;
 }
+
+/*#taskList .continueTask {
+  float: right;
+}*/

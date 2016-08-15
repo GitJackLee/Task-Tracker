@@ -36,3 +36,23 @@ July 7th, 2016
   - index.html is now index.ejs.
   - Created app.js file.
   - Made necessary changes in index.ejs due to directory changes.
+
+July 15th, 2016
+- Major changes
+  - Decided to go with REST api. Completely changed how everything looks.
+  - Using Semantic UI framework.
+  - Reduced the amount of jquery. Plan on changing it so it's not needed at all.
+
+- Timer
+  - Able to
+    - Create new task
+    - Edit the name of a task. I decided against being able to edit the time itself.
+    - Click the save button to save the time. Timer does not update automatically on pause. Must save.
+      - Save redirects to page. Plan to add a message upon saving that notifies user the update was successful.
+    - Able to reset to zero. Like mentioned above. Must save in order to keep changes.
+
+- Home page
+  - Currently, upon starting app.js everything deletes from the database, and is seeded with predefined data. This is for development purposes.
+  - View all created tasks.
+  - Timer on each task that tells the user when it was originally created.
+  - Able to start task and delete only. To edit, you must go to each individual task.
