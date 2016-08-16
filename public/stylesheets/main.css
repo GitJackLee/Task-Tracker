@@ -20,9 +20,12 @@ div.ui.container {
   margin-top: 10em;
 }
 
-
 div.item {
   text-align: center;
+}
+
+label#timer {
+  font-size: 30px;
 }
 
 #container {
