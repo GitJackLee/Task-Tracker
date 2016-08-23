@@ -1,35 +1,36 @@
 <% include ./partials/header %>
 
-<div id="container">
+    <div id="container">
 
-  <div class="ui main text container">
-    <h1 class="ui center aligned icon header"><i class="tasks icon"></i>Task Tracker</h1>
-    <div class="ui top attached segment">
-      <div class="ui divided items">
-        <% tasks.forEach(function(task){ %>
-            <div class="item">
-              <div class="content">
-                <div class="created">
-                  <h2><%=task.task%></h2>
+      <div class="ui main text container">
+        <h1 class="ui center aligned icon header"><i class="tasks icon"></i>Task Tracker</h1>
+        <div class="ui top attached segment">
+          <div class="ui divided items">
+            <% tasks.forEach(function(task){ %>
+                <div class="item">
+                  <div class="content">
+                    <div class="created">
+                      <h2><%=task.task%></h2>
+                    </div>
+                    <div class="time">
+                      <h3><%=task.timer%></h3>
+                    </div>
+                    <div class="extra">
+                    <a class="ui floated basic violet button" href="/tasks/<%=task._id%>">Start Task</a>
+                    <form id="deleteForever" action="/tasks/<%=task._id%>?_method=DELETE" method="POST">
+                      <button class="ui red basic button">DELETE</button>
+                    </form>
+                    </div>
+                    <div class="meta">
+                      <p>Created on: <%=task.created.toDateString()%>, <%= task.created.toTimeString().slice(0, -18) %></p>
+                    </div>
+                  </div>
                 </div>
-                <div class="time">
-                  <h3><%=task.timer%></h3>
-                </div>
-                <div class="extra">
-                <a class="ui floated basic violet button" href="/tasks/<%=task._id%>">Start Task</a>
-                <form id="deleteForever" action="/tasks/<%=task._id%>?_method=DELETE" method="POST">
-                  <button class="ui red basic button">DELETE</button>
-                </form>
-                </div>
-                <div class="meta">
-                  <p>Created on: <%=task.created.toDateString()%>, <%= task.created.toTimeString().slice(0, -18) %></p>
-                </div>
-              </div>
-            </div>
-          <% }); %>
+              <% }); %>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
 
-<% include ./partials/footer %>
+  </body>
+</html>
