@@ -1,4 +1,4 @@
-July 4th, 2016
+August 4th, 2016
 - General changes
   - Clicking on the title now makes a text box appear.
   - Entering a new title replaces the old title with a new one.
@@ -12,18 +12,18 @@ July 4th, 2016
   - If you are in "enter task name" mode (where you can type in the task name), you're unable to start the clock or save your data.
   - Must stop the stopwatch in order to reset.
 
-July 5th, 2016
+August 5th, 2016
 - General changes
   - Added a continue button for each li.
     - Changed ".taskItems" to "ul" to dynamically affect newly created continue buttons. **Note to self, although I did this on my own, I don't understand completely why it happened that way. Check it out**
   - Save button does not work if the timer is running
 
-July 6th, 2016
+August 6th, 2016
 - General changes
   - Changed variable "time" to "currentTime".
   - Changed timer to start from continued time.
 
-July 7th, 2016
+August 7th, 2016
 - Decided to use npm from Node.js to finish this project.
   - Installed:
     - Express
@@ -37,7 +37,7 @@ July 7th, 2016
   - Created app.js file.
   - Made necessary changes in index.ejs due to directory changes.
 
-July 15th, 2016
+August 15th, 2016
 - Major changes
   - Decided to go with REST api. Completely changed how everything looks.
   - Using Semantic UI framework.
@@ -56,3 +56,10 @@ July 15th, 2016
   - View all created tasks.
   - Timer on each task that tells the user when it was originally created.
   - Able to start task and delete only. To edit, you must go to each individual task.
+
+August 24th, 2016
+- Added Pomodoro application
+  - Link located in the nav bar.
+
+- Fixed errors coming from unneeded JS.
+- Added CSS and JS for Pomodoro clock.
