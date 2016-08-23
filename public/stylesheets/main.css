@@ -1,3 +1,10 @@
+@media (min-width: 801px){
+  div#container {
+    margin: 10% 33%;
+    word-wrap: break-word;
+  }
+}
+
 body {
   background: #eeeeee;
 }
@@ -25,13 +32,40 @@ div.item {
   text-align: center;
 }
 
+div.ui.input#pomodoroInput {
+  width: 100%;
+}
+
+div.ui.circular.segment {
+  font-size: 2em;
+  display: inline-block;
+  width: 100%;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
 #container {
   margin: 10% 35%;
   text-align: center;
+  word-wrap: break-word;
 }
 
 #buttons {
   text-align: center;
+}
+
+#pomodoroButtons {
+  width: 100%;
+  text-align: center;
+}
+
+h1#taskName {
+  font-size: 3em;
+  margin: 10px;
+}
+
+h1#timer {
+  font-size: 1em;
 }
 
 #deleteForever {
