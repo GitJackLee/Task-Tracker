@@ -35,6 +35,10 @@ app.get("/tasks", function(req, res){
   });
 });
 
+app.get("/tasks/pomodoro", function(req, res){
+  res.render("pomodoro");
+});
+
 //NEW -- FORM FOR NEW TASK
 app.get("/tasks/new", function(req, res){
   res.render("new");
